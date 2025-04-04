@@ -71,7 +71,7 @@ export const env = createEnv({
     // Vercel Fluid Compute allows up to 800s, but other plans are capped at 300s or less
     MAX_DURATION: z.preprocess(
       (value) => (typeof value === "string" ? Number(value) : value),
-      z.number().optional().default(800)
+      z.number().optional().default(60)
     ),
 
     // license
