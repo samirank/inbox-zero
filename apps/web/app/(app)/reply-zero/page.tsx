@@ -28,7 +28,7 @@ import { GmailProvider } from "@/providers/GmailProvider";
 import { cookies } from "next/headers";
 import { REPLY_ZERO_ONBOARDING_COOKIE } from "@/utils/cookies";
 
-export const maxDuration = Math.min(env.MAX_DURATION, 300);
+export const maxDuration = Math.min(process.env.MAX_DURATION, 300);
 
 export default async function ReplyTrackerPage(props: {
   searchParams: Promise<{
