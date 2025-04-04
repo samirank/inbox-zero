@@ -5,7 +5,7 @@ import { handleBatchRequest } from "@/app/api/user/categorize/senders/batch/hand
 import { env } from "@/env";
 import { isValidInternalApiKey } from "@/utils/internal-api";
 
-export const maxDuration = Math.min(process.env.MAX_DURATION, 300);
+export const maxDuration = Math.min(env.MAX_DURATION, 300);
 
 // Fallback when Qstash is not in use
 export const POST = withError(async (request) => {

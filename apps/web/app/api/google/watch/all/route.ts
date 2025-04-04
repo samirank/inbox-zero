@@ -7,11 +7,12 @@ import { withError } from "@/utils/middleware";
 import { captureException } from "@/utils/error";
 import { hasAiAccess, hasColdEmailAccess } from "@/utils/premium";
 import { createScopedLogger } from "@/utils/logger";
+import { env } from "@/env";
 
 const logger = createScopedLogger("api/google/watch/all");
 
 export const dynamic = "force-dynamic";
-export const maxDuration = Math.min(process.env.MAX_DURATION, 300);
+export const maxDuration = Math.min(env.MAX_DURATION, 300);
 
 async function watchAllEmails() {
   const premiums = await prisma.premium.findMany({

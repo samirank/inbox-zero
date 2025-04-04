@@ -26,9 +26,10 @@ import { PremiumAlertWithData } from "@/components/PremiumAlert";
 import { Button } from "@/components/ui/button";
 import { CategorizeSendersProgress } from "@/app/(app)/smart-categories/CategorizeProgress";
 import { getCategorizationProgress } from "@/utils/redis/categorization-progress";
+import { env } from "@/env";
 
 export const dynamic = "force-dynamic";
-export const maxDuration = Math.min(process.env.MAX_DURATION, 300);
+export const maxDuration = Math.min(env.MAX_DURATION, 300);
 
 export default async function CategoriesPage() {
   const session = await auth();

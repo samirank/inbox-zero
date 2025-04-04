@@ -2,8 +2,9 @@ import type { NextRequest } from "next/server";
 import { auth } from "@/app/api/auth/[...nextauth]/auth";
 import { createScopedLogger } from "@/utils/logger";
 import { RedisSubscriber } from "@/utils/redis/subscriber";
+import { env } from "@/env";
 
-export const maxDuration = Math.min(process.env.MAX_DURATION, 300);
+export const maxDuration = Math.min(env.MAX_DURATION, 300);
 
 const logger = createScopedLogger("email-stream");
 

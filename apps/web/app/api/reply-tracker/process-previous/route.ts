@@ -7,10 +7,11 @@ import prisma from "@/utils/prisma";
 import { createScopedLogger } from "@/utils/logger";
 import { isValidInternalApiKey } from "@/utils/internal-api";
 import { headers } from "next/headers";
+import { env } from "@/env";
 
 const logger = createScopedLogger("api/reply-tracker/process-previous");
 
-export const maxDuration = Math.min(process.env.MAX_DURATION, 300);
+export const maxDuration = Math.min(env.MAX_DURATION, 300);
 
 const processPreviousSchema = z.object({ userId: z.string() });
 export type ProcessPreviousBody = z.infer<typeof processPreviousSchema>;

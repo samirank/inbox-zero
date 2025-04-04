@@ -6,8 +6,9 @@ import { OnboardingAIEmailAssistant } from "@/app/(app)/onboarding/OnboardingEma
 import { OnboardingFinish } from "@/app/(app)/onboarding/OnboardingFinish";
 import { PermissionsCheck } from "@/app/(app)/PermissionsCheck";
 import { LoadStats } from "@/providers/StatLoaderProvider";
+import { env } from "@/env";
 
-export const maxDuration = Math.min(process.env.MAX_DURATION, 120);
+export const maxDuration = Math.min(env.MAX_DURATION, 120);
 
 export default async function OnboardingPage(props: {
   searchParams: Promise<{ step?: string }>;
