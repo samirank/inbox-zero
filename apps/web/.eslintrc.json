@@ -3,7 +3,7 @@
   "extends": ["@inboxzero/eslint-config/next.js"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": true
   },
   "rules": {
     "no-console": "warn"
