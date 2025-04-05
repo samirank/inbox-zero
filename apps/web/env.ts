@@ -69,10 +69,7 @@ export const env = createEnv({
     USE_BACKUP_MODEL: z.coerce.boolean().optional().default(false),
     // See Vercel limits here: https://vercel.com/docs/functions/configuring-functions/duration#duration-limits
     // Vercel Fluid Compute allows up to 800s, but other plans are capped at 300s or less
-    MAX_DURATION: z.preprocess(
-      (value) => (typeof value === "string" ? Number(value) : value),
-      z.number().optional().default(60)
-    ),
+    MAX_DURATION: z.coerce.number().optional().default(800),
 
     // license
     LICENSE_1_SEAT_VARIANT_ID: z.coerce.number().optional(),
@@ -185,7 +182,7 @@ export const env = createEnv({
     NEXT_PUBLIC_LIFETIME_EXTRA_SEATS_PAYMENT_LINK:
       process.env.NEXT_PUBLIC_LIFETIME_EXTRA_SEATS_PAYMENT_LINK,
     NEXT_PUBLIC_LIFETIME_EXTRA_SEATS_VARIANT_ID:
-      process.env.NEXT_PUBLIC_LIFETIME_VARIANT_ID,
+      process.env.NEXT_PUBLIC_LIFETIME_EXTRA_SEATS_VARIANT_ID,
 
     NEXT_PUBLIC_CALL_LINK: process.env.NEXT_PUBLIC_CALL_LINK,
     NEXT_PUBLIC_POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,
@@ -211,5 +208,8 @@ export const env = createEnv({
       process.env.NEXT_PUBLIC_BEDROCK_ANTHROPIC_BACKUP_MODEL,
     NEXT_PUBLIC_OLLAMA_MODEL: process.env.NEXT_PUBLIC_OLLAMA_MODEL,
     NEXT_PUBLIC_APP_HOME_PATH: process.env.NEXT_PUBLIC_APP_HOME_PATH,
+
+    // Add MAX_DURATION here
+    MAX_DURATION: process.env.MAX_DURATION,
   },
 });
