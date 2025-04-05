@@ -4,7 +4,7 @@ import { createScopedLogger } from "@/utils/logger";
 import { RedisSubscriber } from "@/utils/redis/subscriber";
 import { env } from "@/env";
 
-export const maxDuration = Math.min(env.MAX_DURATION, 300);
+export const maxDuration = 60;
 
 const logger = createScopedLogger("email-stream");
 

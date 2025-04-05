@@ -19,7 +19,7 @@ import { ASSISTANT_ONBOARDING_COOKIE } from "@/utils/cookies";
 import { Button } from "@/components/ui/button";
 import { env } from "@/env";
 
-export const maxDuration = Math.min(env.MAX_DURATION, 300); // Applies to the actions
+export const maxDuration = 60; // Applies to the actions
 
 export default async function AutomationPage() {
   const session = await auth();

@@ -29,7 +29,7 @@ import { cookies } from "next/headers";
 import { REPLY_ZERO_ONBOARDING_COOKIE } from "@/utils/cookies";
 import { env } from "@/env";
 
-export const maxDuration = Math.min(env.MAX_DURATION, 300);
+export const maxDuration = 60;
 
 export default async function ReplyTrackerPage(props: {
   searchParams: Promise<{

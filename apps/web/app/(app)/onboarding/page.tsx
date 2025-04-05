@@ -8,7 +8,7 @@ import { PermissionsCheck } from "@/app/(app)/PermissionsCheck";
 import { LoadStats } from "@/providers/StatLoaderProvider";
 import { env } from "@/env";
 
-export const maxDuration = Math.min(env.MAX_DURATION, 120);
+export const maxDuration = 60;
 
 export default async function OnboardingPage(props: {
   searchParams: Promise<{ step?: string }>;

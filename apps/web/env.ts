@@ -66,7 +66,7 @@ export const env = createEnv({
     WEBHOOK_URL: z.string().optional(),
     INTERNAL_API_KEY: z.string().optional(),
     WHITELIST_FROM: z.string().optional(),
-    USE_BACKUP_MODEL: z.coerce.boolean().optional().default(false)
+    USE_BACKUP_MODEL: z.coerce.boolean().optional().default(false),
 
     // license
     LICENSE_1_SEAT_VARIANT_ID: z.coerce.number().optional(),

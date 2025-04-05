@@ -6,7 +6,7 @@ import { ErrorPage } from "@/components/ErrorPage";
 import { isAdmin } from "@/utils/admin";
 import { env } from "@/env";
 
-export const maxDuration = Math.min(env.MAX_DURATION, 300);
+export const maxDuration = 60;
 
 export default async function AdminPage() {
   const session = await auth();

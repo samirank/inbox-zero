@@ -11,7 +11,7 @@ import { env } from "@/env";
 
 const logger = createScopedLogger("api/reply-tracker/process-previous");
 
-export const maxDuration = Math.min(env.MAX_DURATION, 300);
+export const maxDuration = 60;
 
 const processPreviousSchema = z.object({ userId: z.string() });
 export type ProcessPreviousBody = z.infer<typeof processPreviousSchema>;
