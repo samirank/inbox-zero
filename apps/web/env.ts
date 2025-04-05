@@ -137,6 +137,7 @@ export const env = createEnv({
       .default("us.anthropic.claude-3-5-sonnet-20241022-v2:0"),
     NEXT_PUBLIC_OLLAMA_MODEL: z.string().optional(),
     NEXT_PUBLIC_APP_HOME_PATH: z.string().default("/setup"),
+    MAX_DURATION: z.coerce.number().optional().default(800),
   },
   // For Next.js >= 13.4.4, you only need to destructure client variables:
   experimental__runtimeEnv: {
@@ -207,9 +208,6 @@ export const env = createEnv({
     NEXT_PUBLIC_BEDROCK_ANTHROPIC_BACKUP_MODEL:
       process.env.NEXT_PUBLIC_BEDROCK_ANTHROPIC_BACKUP_MODEL,
     NEXT_PUBLIC_OLLAMA_MODEL: process.env.NEXT_PUBLIC_OLLAMA_MODEL,
-    NEXT_PUBLIC_APP_HOME_PATH: process.env.NEXT_PUBLIC_APP_HOME_PATH,
-
-    // Add MAX_DURATION here
-    MAX_DURATION: process.env.MAX_DURATION,
+    NEXT_PUBLIC_APP_HOME_PATH: process.env.NEXT_PUBLIC_APP_HOME_PATH
   },
 });
